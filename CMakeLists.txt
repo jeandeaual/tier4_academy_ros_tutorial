@@ -149,6 +149,9 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
+add_executable(simple src/simple.cpp)
+target_link_libraries(simple ${catkin_LIBRARIES})
+
 #############
 ## Install ##
 #############
@@ -190,6 +193,11 @@ include_directories(
 #   # myfile2
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
+
+install(TARGETS
+  simple
+  DESTINATION lib/${PROJECT_NAME}
+)
 
 #############
 ## Testing ##
