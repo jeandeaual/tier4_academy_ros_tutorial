@@ -53,11 +53,10 @@ add_message_files(
 )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(
+  FILES
+  AddNums.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -154,15 +153,21 @@ add_executable(talker src/talker.cpp)
 add_executable(listener src/listener.cpp)
 add_executable(talker2 src/talker2.cpp)
 add_executable(listener2 src/listener2.cpp)
+add_executable(client src/client.cpp)
+add_executable(server src/server.cpp)
 
 add_dependencies(talker2 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(listener2 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(client ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(server ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 target_link_libraries(simple ${catkin_LIBRARIES})
 target_link_libraries(talker ${catkin_LIBRARIES})
 target_link_libraries(listener ${catkin_LIBRARIES})
 target_link_libraries(talker2 ${catkin_LIBRARIES})
 target_link_libraries(listener2 ${catkin_LIBRARIES})
+target_link_libraries(client ${catkin_LIBRARIES})
+target_link_libraries(server ${catkin_LIBRARIES})
 
 #############
 ## Install ##
@@ -207,7 +212,7 @@ target_link_libraries(listener2 ${catkin_LIBRARIES})
 # )
 
 install(TARGETS
-  simple talker listener talker2 listener2
+  simple talker listener talker2 listener2 client server
   DESTINATION lib/${PROJECT_NAME}
 )
 
