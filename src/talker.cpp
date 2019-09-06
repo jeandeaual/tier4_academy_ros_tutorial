@@ -19,6 +19,7 @@ int main(int argc, char **argv)
         // Ctrl-C(SINGINTシグナル)を押すと ros::ok() が false を返却
         std_msgs::String msg;
         std::stringstream ss;
+
         ss << "Hello, World!";
         msg.data = ss.str();
         // メッセージを発信

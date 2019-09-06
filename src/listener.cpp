@@ -1,7 +1,7 @@
 #include "ros/ros.h" // ROSで必要なヘッダー
 #include "std_msgs/String.h"
 
-void chatterCallback(const std_msgs::String::ConstPtr& msg)
+void chatterCallback(const std_msgs::String::ConstPtr &msg)
 {
     // 結果を標準出力
     ROS_INFO("I heard: [%s]", msg->data.c_str());
