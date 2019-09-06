@@ -8,7 +8,6 @@ int main(int argc, char **argv)
     ros::NodeHandle n;
     // 1Hzで動作させるためのタイマーを作成
     ros::Rate loop_rate(1);
-
     int count = 0;
 
     while (ros::ok()) {
