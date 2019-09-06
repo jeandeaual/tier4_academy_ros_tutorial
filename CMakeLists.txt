@@ -155,6 +155,7 @@ add_executable(talker2 src/talker2.cpp)
 add_executable(listener2 src/listener2.cpp)
 add_executable(client src/client.cpp)
 add_executable(server src/server.cpp)
+add_executable(parameter src/parameter.cpp)
 
 add_dependencies(talker2 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(listener2 ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
@@ -168,6 +169,7 @@ target_link_libraries(talker2 ${catkin_LIBRARIES})
 target_link_libraries(listener2 ${catkin_LIBRARIES})
 target_link_libraries(client ${catkin_LIBRARIES})
 target_link_libraries(server ${catkin_LIBRARIES})
+target_link_libraries(parameter ${catkin_LIBRARIES})
 
 #############
 ## Install ##
@@ -212,7 +214,7 @@ target_link_libraries(server ${catkin_LIBRARIES})
 # )
 
 install(TARGETS
-  simple talker listener talker2 listener2 client server
+  simple talker listener talker2 listener2 client server parameter
   DESTINATION lib/${PROJECT_NAME}
 )
 
