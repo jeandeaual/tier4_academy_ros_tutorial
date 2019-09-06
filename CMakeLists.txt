@@ -150,7 +150,12 @@ include_directories(
 # )
 
 add_executable(simple src/simple.cpp)
+add_executable(talker src/talker.cpp)
+add_executable(listener src/listener.cpp)
+
 target_link_libraries(simple ${catkin_LIBRARIES})
+target_link_libraries(talker ${catkin_LIBRARIES})
+target_link_libraries(listener ${catkin_LIBRARIES})
 
 #############
 ## Install ##
@@ -195,7 +200,7 @@ target_link_libraries(simple ${catkin_LIBRARIES})
 # )
 
 install(TARGETS
-  simple
+  simple talker listener
   DESTINATION lib/${PROJECT_NAME}
 )
 
